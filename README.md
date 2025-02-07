@@ -12,7 +12,7 @@ BFNET is structured into **three key components**, leveraging **modern Fortran**
 
 1. **Descriptor Generation (Modern Fortran)**
 
-- Computes atomic environment descriptors based on Behler-Parrinello-type symmetry functions. Now only Chebyshev descriptor is supported.
+- Computes atomic environment descriptors based on Behler-Parrinello-type symmetry functions. Now only Chebyshev descriptor (compatible with aenet v2.0.4 not 2.0.3) is supported.
 
 2. **Neural Network Training (Julia, in development)**
 
