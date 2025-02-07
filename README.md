@@ -45,7 +45,7 @@ BFNET is structured into **three key components**, leveraging **modern Fortran**
 **Build Instructions**
 
 ```
-git clone https://github.com/yourusername/BFNET.git
+git clone https://github.com/cometscome/BPNET.git
 cd BFNET
 mkdir build && cd build
 cmake ..
