@@ -347,14 +347,16 @@ module bspline
         !do i = 1, size(knots)-3
             if (knots(i+2) - knots(i) /= 0.0_dp) then
                 n2(i) = (x - knots(i)) / (knots(i+2) - knots(i)) * n1(i)
-                dn2(i) = (1.0_dp / (knots(i+2) - knots(i))) * n1(i) + ((x - knots(i)) / (knots(i+2) - knots(i))) * dn1(i)
+                dn2(i) = (1.0_dp / (knots(i+2) - knots(i))) * n1(i) + &
+                     ((x - knots(i)) / (knots(i+2) - knots(i))) * dn1(i)
             else
                 n2(i) = 0.0_dp
                 dn2(i) = 0.0_dp
             end if
             if (knots(i+3) - knots(i+1) /= 0.0_dp) then
                 n2(i) = n2(i) + (knots(i+3) - x) / (knots(i+3) - knots(i+1)) * n1(i+1)
-                dn2(i) = dn2(i) - (1.0_dp / (knots(i+3) - knots(i+1))) * n1(i+1) + ((knots(i+3) - x) / (knots(i+3) - knots(i+1))) * dn1(i+1)
+                dn2(i) = dn2(i) - (1.0_dp / (knots(i+3) - knots(i+1))) * &
+                    n1(i+1) + ((knots(i+3) - x) / (knots(i+3) - knots(i+1))) * dn1(i+1)
             end if
         end do
     
@@ -364,14 +366,16 @@ module bspline
         !do i = 1, size(knots)-4
             if (knots(i+3) - knots(i) /= 0.0_dp) then
                 n3(i) = (x - knots(i)) / (knots(i+3) - knots(i)) * n2(i)
-                dn3(i) = (1.0_dp / (knots(i+3) - knots(i))) * n2(i) + ((x - knots(i)) / (knots(i+3) - knots(i))) * dn2(i)
+                dn3(i) = (1.0_dp / (knots(i+3) - knots(i))) * n2(i) +&
+                     ((x - knots(i)) / (knots(i+3) - knots(i))) * dn2(i)
             else
                 n3(i) = 0.0_dp
                 dn3(i) = 0.0_dp
             end if
             if (knots(i+4) - knots(i+1) /= 0.0_dp) then
                 n3(i) = n3(i) + (knots(i+4) - x) / (knots(i+4) - knots(i+1)) * n2(i+1)
-                dn3(i) = dn3(i) - (1.0_dp / (knots(i+4) - knots(i+1))) * n2(i+1) + ((knots(i+4) - x) / (knots(i+4) - knots(i+1))) * dn2(i+1)
+                dn3(i) = dn3(i) - (1.0_dp / (knots(i+4) - knots(i+1))) *&
+                 n2(i+1) + ((knots(i+4) - x) / (knots(i+4) - knots(i+1))) * dn2(i+1)
             end if
         end do
     
@@ -470,11 +474,13 @@ module bspline
         do j = 0, 1
             if (knots(i+j+2) - knots(i+j) /= 0.0_dp) then
                 N2(j+1) = (x - knots(i+j)) / (knots(i+j+2) - knots(i+j)) * N1(j+1)
-                dN2(j+1) = 1.0_dp / (knots(i+j+2) - knots(i+j)) * N1(j+1) + (x - knots(i+j)) / (knots(i+j+2) - knots(i+j)) * dN1(j+1)
+                dN2(j+1) = 1.0_dp / (knots(i+j+2) - knots(i+j)) * N1(j+1) + &
+                     (x - knots(i+j)) / (knots(i+j+2) - knots(i+j)) * dN1(j+1)
             end if
             if (knots(i+j+3) - knots(i+j+1) /= 0.0_dp) then
                 N2(j+1) = N2(j+1) + (knots(i+j+3) - x) / (knots(i+j+3) - knots(i+j+1)) * N1(j+2)
-                dN2(j+1) = dN2(j+1) - 1.0_dp / (knots(i+j+3) - knots(i+j+1)) * N1(j+2) + (knots(i+j+3) - x) / (knots(i+j+3) - knots(i+j+1)) * dN1(j+2)
+                dN2(j+1) = dN2(j+1) - 1.0_dp / (knots(i+j+3) - knots(i+j+1)) * &
+                     N1(j+2) + (knots(i+j+3) - x) / (knots(i+j+3) - knots(i+j+1)) * dN1(j+2)
             end if
         end do
     
@@ -483,11 +489,13 @@ module bspline
         derivative_value = 0.0_dp
         if (knots(i+3) - knots(i) /= 0.0_dp) then
             basis_value = (x - knots(i)) / (knots(i+3) - knots(i)) * N2(1)
-            derivative_value = 1.0_dp / (knots(i+3) - knots(i)) * N2(1) + (x - knots(i)) / (knots(i+3) - knots(i)) * dN2(1)
+            derivative_value = 1.0_dp / (knots(i+3) - knots(i)) * N2(1) + &
+                 (x - knots(i)) / (knots(i+3) - knots(i)) * dN2(1)
         end if
         if (knots(i+4) - knots(i+1) /= 0.0_dp) then
             basis_value = basis_value + (knots(i+4) - x) / (knots(i+4) - knots(i+1)) * N2(2)
-            derivative_value = derivative_value - 1.0_dp / (knots(i+4) - knots(i+1)) * N2(2) + (knots(i+4) - x) / (knots(i+4) - knots(i+1)) * dN2(2)
+            derivative_value = derivative_value - 1.0_dp / (knots(i+4) -&
+             knots(i+1)) * N2(2) + (knots(i+4) - x) / (knots(i+4) - knots(i+1)) * dN2(2)
         end if
     end subroutine bspline_basis_and_derivative_non_recursive
  
