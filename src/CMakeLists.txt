@@ -48,6 +48,11 @@ PRIVATE
 ${SOURCES}
 )
 
+install(TARGETS bpnet EXPORT bpnetConfig DESTINATION lib)
+install(FILES ${SOURCES} DESTINATION include)
+
+export(EXPORT bpnetConfig FILE bpnetConfig.cmake)
+
 #set(CMAKE_Fortran_FLAGS "-g -fcheck=all -Wall -fbacktrace")# -finit-real=nan -finit-integer=-999")
 set(CMAKE_Fortran_FLAGS "-O3 -pedantic")# -finit-real=nan -finit-integer=-999")
 

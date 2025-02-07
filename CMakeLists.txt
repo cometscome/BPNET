@@ -8,8 +8,11 @@ set(CMAKE_Fortran_FLAGS "-Wall -Wextra")
 # Set the output directory for the executable
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)   
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)   
+
 set(FORTRAN_MOD_DIR ${CMAKE_BINARY_DIR}/mod)
-file(MAKE_DIRECTORY ${FORTRAN_MOD_DIR}) # ディレクトリを作成
+file(MAKE_DIRECTORY ${FORTRAN_MOD_DIR}) 
 
 # Specify the output directory for Fortran modules
 set(CMAKE_Fortran_MODULE_DIRECTORY ${FORTRAN_MOD_DIR})
