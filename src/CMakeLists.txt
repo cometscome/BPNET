@@ -38,6 +38,7 @@ ${bpnet_PATH}/multibasis/fingerprints_sub_multibasis.f90
 ${bpnet_PATH}/multibasis/fingerprint_basis_multi.f90
 ${bpnet_PATH}/mod_dataset.f90
 ${bpnet_PATH}/structureinfo.f90
+${bpnet_PATH}/bpnet.f90
 )
 
 
