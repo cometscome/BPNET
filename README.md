@@ -4,11 +4,11 @@
 BPNET (**Behler-Parrinello neural NETwork potential**) is an open-source, modern Fortran implementation of machine learning potential construction. It is inspired by [aenet](http://ann.atomistic.net) and aims to provide a more maintainable and extensible alternative while introducing new features and optimizations.
 
 
-**Note:** BFNET is still under development and does not yet support all features of aenet. However, it is designed to **extend beyond aenet** by incorporating new capabilities.
+**Note:** BPNET is still under development and does not yet support all features of aenet. However, it is designed to **extend beyond aenet** by incorporating new capabilities.
 
 **Architecture**
 
-BFNET is structured into **three key components**, leveraging **modern Fortran** for high-performance computation and **Julia** (under development) for flexible model training:
+BPNET is structured into **three key components**, leveraging **modern Fortran** for high-performance computation and **Julia** (under development) for flexible model training:
 
 1. **Descriptor Generation (Modern Fortran)**
 
@@ -18,7 +18,7 @@ BFNET is structured into **three key components**, leveraging **modern Fortran**
 
 - The training module is currently under development and will be released in a separate repository.
 
-- In the meantime, **aenet can be used for training**, as BFNET’s descriptor format is compatible with aenet.
+- In the meantime, **aenet can be used for training**, as BPNET’s descriptor format is compatible with aenet.
 
 3. **Potential Evaluation (Modern Fortran)**
 
@@ -46,7 +46,7 @@ BFNET is structured into **three key components**, leveraging **modern Fortran**
 
 ```
 git clone https://github.com/cometscome/BPNET.git
-cd BFNET
+cd BPNET
 mkdir build && cd build
 cmake ..
 make -j$(nproc)
@@ -54,7 +54,7 @@ make -j$(nproc)
 
 **License**
 
-BFNET is released under the MIT License. See the [LICENSE](LICENSE) file for details.
+BPNET is released under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 
 **Contributors**
@@ -67,4 +67,4 @@ BFNET is released under the MIT License. See the [LICENSE](LICENSE) file for det
 **Acknowledgments**
 
 
-BFNET is inspired by [aenet](http://ann.atomistic.net) and aims to provide a modern, maintainable alternative.
+BPNET is inspired by [aenet](http://ann.atomistic.net) and aims to provide a modern, maintainable alternative.
