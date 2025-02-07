@@ -1,7 +1,7 @@
 
-# **BFNET: A Modern Fortran Machine Learning Potential Code**
+# **BPNET: A Modern Fortran Machine Learning Potential Code**
 
-BFNET (**Behler-Parrinello neural NETwork potential**) is an open-source, modern Fortran implementation of machine learning potential construction. It is inspired by [aenet](http://ann.atomistic.net) and aims to provide a more maintainable and extensible alternative while introducing new features and optimizations.
+BPNET (**Behler-Parrinello neural NETwork potential**) is an open-source, modern Fortran implementation of machine learning potential construction. It is inspired by [aenet](http://ann.atomistic.net) and aims to provide a more maintainable and extensible alternative while introducing new features and optimizations.
 
 
 **Note:** BFNET is still under development and does not yet support all features of aenet. However, it is designed to **extend beyond aenet** by incorporating new capabilities.
