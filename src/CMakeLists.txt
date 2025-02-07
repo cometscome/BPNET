@@ -65,16 +65,6 @@ target_link_libraries(nnASCII2bin.x PRIVATE bpnet)
 add_executable(trainbin2ASCII.x ${bpnet_dir}/trainbin2ASCII.f90)
 target_link_libraries(trainbin2ASCII.x PRIVATE bpnet)
 
-# math_utilsモジュールのビルド
+# math_utils module
 add_library(math_utils math_utils.f90)
 
-# math_utils.mod ファイルの出力先を指定
-#set_target_properties(math_utils PROPERTIES
-#    Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/mod
-#)
-
-
-# mainプログラムのビルド
-#add_executable(main main.f90)
-#target_link_libraries(main PRIVATE math_utils)
-#target_include_directories(main PRIVATE ${CMAKE_BINARY_DIR}/mod)

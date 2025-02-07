@@ -1,20 +1,20 @@
 cmake_minimum_required(VERSION 3.15)
 project(FortranProject LANGUAGES Fortran)
 
-# コンパイラの標準を指定 (gfortranの場合)
+# Specify the Fortran standard (for gfortran)
 set(CMAKE_Fortran_STANDARD 2008)
 set(CMAKE_Fortran_FLAGS "-Wall -Wextra")
 
-# 実行ファイルの出力先
+# Set the output directory for the executable
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 set(FORTRAN_MOD_DIR ${CMAKE_BINARY_DIR}/mod)
 file(MAKE_DIRECTORY ${FORTRAN_MOD_DIR}) # ディレクトリを作成
 
-# Fortranモジュールの出力先を指定
+# Specify the output directory for Fortran modules
 set(CMAKE_Fortran_MODULE_DIRECTORY ${FORTRAN_MOD_DIR})
 #set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -g -fcheck=all -fbacktrace -finit-real=snan -Wall")
-# Fortranコンパイラの判定
+# Detect the Fortran compiler
 if(CMAKE_Fortran_COMPILER_ID MATCHES "GNU")
     message(STATUS "Using GNU Fortran (gfortran)")
     #set(CMAKE_Fortran_FLAGS "-O2 -g -pg -fbacktrace -Wall -Wextra")
@@ -30,8 +30,6 @@ endif()
 
 enable_testing()
 
-# サブディレクトリを追加
+# Add subdirectories
 add_subdirectory(src)
 add_subdirectory(tests)
-
-# CTestを有効化
