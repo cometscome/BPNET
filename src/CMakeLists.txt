@@ -54,8 +54,9 @@ install(FILES ${SOURCES} DESTINATION include)
 
 export(EXPORT bpnetConfig FILE bpnetConfig.cmake)
 
-#set(CMAKE_Fortran_FLAGS "-g -fcheck=all -Wall -fbacktrace")# -finit-real=nan -finit-integer=-999")
+#set(CMAKE_Fortran_FLAGS "-g -fcheck=all -Wall -fbacktrace -Werror=line-truncation")# -finit-real=nan -finit-integer=-999")
 set(CMAKE_Fortran_FLAGS "-O3 -pedantic")# -finit-real=nan -finit-integer=-999")
+#set(CMAKE_Fortran_FLAGS "-O3 -pedantic")# -finit-real=nan -finit-integer=-999")
 
 
 add_executable(bpnet_generate.x ${bpnet_dir}/bpnet_generate.f90)

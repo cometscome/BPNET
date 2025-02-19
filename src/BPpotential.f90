@@ -97,15 +97,29 @@ module mod_bppotential
         real(real64)::eta
         integer                      :: ntypes_global
         real(real64)::scale
+        character(len=:), allocatable :: filename
+        integer :: null_pos
         
 
         BPpot%potential_filename = potential_filename
         BPpot%typeName = typeName
 
+        null_pos = INDEX(potential_filename, CHAR(0))
+
+        if (null_pos > 0) then
+            filename = potential_filename(1:null_pos-1)  ! for cstring
+        else
+            filename = TRIM(ADJUSTL(potential_filename(1:LEN_TRIM(potential_filename))))
+        end if
+        !write(*,*) filename
+
+        open(newunit= u, file=trim(filename), status='old', action='read', &
+            form='unformatted')        
+
         !write(*,*) BPpot%typeName,BPpot%potential_filename
     
-        open(newunit= u, file=trim(potential_filename), status='old', action='read', &
-            form='unformatted')
+        !open(newunit= u, file=trim(potential_filename), status='old', action='read', &
+        !    form='unformatted')
 
         potential_params = aenet_potential(u)
         
