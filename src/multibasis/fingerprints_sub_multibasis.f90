@@ -111,11 +111,14 @@ submodule (fingerprints) multibasis
             ibasis =  nint(fingerprint_parameters(2+(ikind-1)*(num_of_maxparameters+1),1) )
             !write(*,*) fingerprint_parameters(3+(ikind-1)*(num_of_maxparameters+1):num_of_maxparameters+1+(ikind-1)*(num_of_maxparameters+1),:)
             if (ibasis == 1) then !chebyshev
-                call print_info_chebyshev(fingerprint_parameters(3+(ikind-1)*(num_of_maxparameters+1):num_of_maxparameters+1+(ikind-1)*(num_of_maxparameters+1),:))
+                call print_info_chebyshev(fingerprint_parameters(3+(ikind-1)* &
+                    (num_of_maxparameters+1):num_of_maxparameters+1+(ikind-1)*(num_of_maxparameters+1),:))
             elseif(ibasis == 2) then !spline
-                call print_info_spline(fingerprint_parameters(3+(ikind-1)*(num_of_maxparameters+1):num_of_maxparameters+1+(ikind-1)*(num_of_maxparameters+1),:))
+                call print_info_spline(fingerprint_parameters(3+(ikind-1)* &
+                    (num_of_maxparameters+1):num_of_maxparameters+1+(ikind-1)*(num_of_maxparameters+1),:))
             elseif(ibasis == 3) then !LJ
-                call print_info_LJ(fingerprint_parameters(3+(ikind-1)*(num_of_maxparameters+1):num_of_maxparameters+1+(ikind-1)*(num_of_maxparameters+1),:))
+                call print_info_LJ(fingerprint_parameters(3+(ikind-1)* &
+                    (num_of_maxparameters+1):num_of_maxparameters+1+(ikind-1)*(num_of_maxparameters+1),:))
             end if
             write(*,*) "------------------------------------------"
         end do
