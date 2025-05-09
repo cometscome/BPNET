@@ -93,23 +93,23 @@ module bpnet_nnASCII2bin
      
          integer              :: nlayers, nnodesmax, Wsize, nvalues
          integer, allocatable :: nnodes(:), fun(:), iw(:), iv(:)
-         real*8, allocatable  :: W(:)
+         real(8), allocatable  :: W(:)
      
          character(len=1024)           :: description
          character(len=100)            :: sftype
          character(len=2)              :: atomtype
          character(len=2), allocatable :: envtypes(:)
-         real*8                        :: rc_min, rc_max
+         real(8)                        :: rc_min, rc_max
          integer                       :: nsf, nsfparam, neval, nenv
          integer, allocatable          :: sf(:), sfenv(:,:)
-         real*8, allocatable           :: sfparam(:,:), sfval_min(:), sfval_max(:), sfval_avg(:), sfval_cov(:)
+         real(8), allocatable           :: sfparam(:,:), sfval_min(:), sfval_max(:), sfval_avg(:), sfval_cov(:)
      
          character(len=1024)           :: file
          logical                       :: normalized
-         real*8                        :: scale, shift, E_min, E_max, E_avg
+         real(8)                        :: scale, shift, E_min, E_max, E_avg
          integer                       :: ntypes, natomtot, nstrucs
          character(len=2), allocatable :: type_names(:)
-         real*8, allocatable           :: E_atom(:)
+         real(8), allocatable           :: E_atom(:)
      
      
          open(unit = 1, action = "read", status = "old", file = infile)
@@ -241,23 +241,23 @@ module bpnet_nnASCII2bin
      
          integer              :: nlayers, nnodesmax, Wsize, nvalues
          integer, allocatable :: nnodes(:), fun(:), iw(:), iv(:)
-         real*8, allocatable  :: W(:)
+         real(8), allocatable  :: W(:)
      
          character(len=1024)           :: description
          character(len=100)            :: sftype
          character(len=2)              :: atomtype
          character(len=2), allocatable :: envtypes(:)
-         real*8                        :: rc_min, rc_max
+         real(8)                        :: rc_min, rc_max
          integer                       :: nsf, nsfparam, neval, nenv
          integer, allocatable          :: sf(:), sfenv(:,:)
-         real*8, allocatable           :: sfparam(:,:), sfval_min(:), sfval_max(:), sfval_avg(:), sfval_cov(:)
+         real(8), allocatable           :: sfparam(:,:), sfval_min(:), sfval_max(:), sfval_avg(:), sfval_cov(:)
      
          character(len=1024)           :: file
          logical                       :: normalized
-         real*8                        :: scale, shift, E_min, E_max, E_avg
+         real(8)                        :: scale, shift, E_min, E_max, E_avg
          integer                       :: ntypes, natomtot, nstrucs
          character(len=2), allocatable :: type_names(:)
-         real*8, allocatable           :: E_atom(:)
+         real(8), allocatable           :: E_atom(:)
      
      
          open(unit = 1, action = "read", status = "old", file = infile, form = "unformatted")

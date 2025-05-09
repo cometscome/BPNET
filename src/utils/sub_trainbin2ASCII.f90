@@ -92,25 +92,25 @@ subroutine ascii2bin(infile, outfile)
     character(len=*), intent(in)  :: infile, outfile
 
     integer                       :: ntypestot, nstrucs, istruc
-    real*8                        :: E_scale, E_shift
+    real(8)                        :: E_scale, E_shift
     logical                       :: normalized
     character(len=2), allocatable :: type_names(:)
-    real*8, allocatable           :: E_atom(:)
+    real(8), allocatable           :: E_atom(:)
 
     integer                       :: length, natoms, ntypes, iatom, itype, jtype, nsf
-    real*8                        :: energy, cooCart(3), forCart(3)
+    real(8)                        :: energy, cooCart(3), forCart(3)
     character(len=1024)           :: filename
-    real*8, allocatable           :: sfval(:)
+    real(8), allocatable           :: sfval(:)
 
     integer                       :: natomtot, nenv, neval, nsfparam
-    real*8                        :: E_avg, E_min, E_max, rc_min, rc_max
+    real(8)                        :: E_avg, E_min, E_max, rc_min, rc_max
     logical                       :: has_setups
     character(len=1024)           :: description
     character(len=2)              :: atomtype
     character(len=100)            :: sftype
     character(len=2), allocatable :: envtypes(:)
     integer, allocatable          :: sf(:), sfenv(:,:)
-    real*8, allocatable           :: sfparam(:,:), sfval_min(:), sfval_max(:), sfval_avg(:), sfval_cov(:)
+    real(8), allocatable           :: sfparam(:,:), sfval_min(:), sfval_max(:), sfval_avg(:), sfval_cov(:)
 
     !integer,intent(in)                             :: ionum
 
@@ -245,25 +245,25 @@ subroutine bin2ascii(infile, outfile)
     character(len=*), intent(in)  :: infile, outfile
 
     integer                       :: i, ntypestot, nstrucs, istruc
-    real*8                        :: E_scale, E_shift
+    real(8)                        :: E_scale, E_shift
     logical                       :: normalized
     character(len=2), allocatable :: type_names(:)
-    real*8, allocatable           :: E_atom(:)
+    real(8), allocatable           :: E_atom(:)
 
     integer                       :: length, natoms, ntypes, iatom, itype, jtype, nsf
-    real*8                        :: energy, cooCart(3), forCart(3)
+    real(8)                        :: energy, cooCart(3), forCart(3)
     character(len=1024)           :: filename
-    real*8, allocatable           :: sfval(:)
+    real(8), allocatable           :: sfval(:)
 
     integer                       :: natomtot, nenv, neval, nsfparam
-    real*8                        :: E_avg, E_min, E_max, rc_min, rc_max
+    real(8)                        :: E_avg, E_min, E_max, rc_min, rc_max
     logical                       :: has_setups
     character(len=1024)           :: description
     character(len=2)              :: atomtype
     character(len=100)            :: sftype
     character(len=2), allocatable :: envtypes(:)
     integer, allocatable          :: sf(:), sfenv(:,:)
-    real*8, allocatable           :: sfparam(:,:), sfval_min(:), sfval_max(:), sfval_avg(:), sfval_cov(:)
+    real(8), allocatable           :: sfparam(:,:), sfval_min(:), sfval_max(:), sfval_avg(:), sfval_cov(:)
     !integer,intent(in)                             :: ionum
     integer::num,num1,num2,j
 
@@ -473,11 +473,11 @@ end subroutine bin2ascii
 subroutine normalize_sfval(nsf, sfval_avg, sfval_cov, sfval)
     implicit none
     integer, intent(in)   :: nsf
-    real*8, intent(in)    :: sfval_avg(:), sfval_cov(:)
-    real*8, intent(inout) :: sfval(:)
+    real(8), intent(in)    :: sfval_avg(:), sfval_cov(:)
+    real(8), intent(inout) :: sfval(:)
 
     integer               :: isf
-    real*8                :: shift, scale
+    real(8)                :: shift, scale
 
     do isf = 1, nsf
         shift = sfval_avg(isf)
