@@ -52,6 +52,21 @@ cmake ..
 make -j$(nproc)
 ```
 
+**Descriptor Generation**
+BPNET generates atomic environment descriptors using Behler-Parrinello-type symmetry functions. The current implementation supports Chebyshev descriptors, which are compatible with aenet v2.0.4 and v2.0.3.
+
+For aenet v2.0.4, the descriptor generation is compatible with the following settings:
+```
+BASIS type=Chebyshev
+radial_Rc = 8.0  radial_N = 16 angular_Rc = 6.5  angular_N = 4
+```
+
+For aenet v2.0.3, the descriptor generation is compatible with the following settings:
+```
+BASIS type=Chebyshev
+radial_Rc = 8.0  radial_N = 16 angular_Rc = 6.5  angular_N = 4 version=1
+```
+
 **License**
 
 BPNET is released under the MIT License. See the [LICENSE](LICENSE) file for details.

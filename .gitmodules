@@ -1,0 +1,3 @@
+[submodule "src/external/sphericart"]
+	path = src/external/sphericart
+	url = https://github.com/lab-cosmo/sphericart
