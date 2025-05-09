@@ -15,7 +15,7 @@ submodule (fingerprints) multibasis
         !real(real64)    :: r_Rc, a_Rc
         integer::nTypes,ikind,num_of_coeffs_i,num_of_coeffs_total
         logical :: eof
-        real(real64)::paramdata(4)
+        real(real64)::paramdata(5)
         integer::num_of_maxparameters_total,ibasis
         real(real64),allocatable::paramdata_total(:)
         real(real64)::Rc
